@@ -20,7 +20,7 @@ module Wombat
       def initialize
         @mechanize = Mechanize.new
         @mechanize.set_proxy(*Wombat.proxy_args) if Wombat.proxy_args
-        @mechanize.allowed_error_codes = ['404']
+        @mechanize.agent.allowed_error_codes = ['404']
       end
 
       def parse(metadata)
